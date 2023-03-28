@@ -1,0 +1,147 @@
+.timeline {
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    display: flex;
+    align-items: center;
+    width: 95%;
+    min-width: 580px;
+    /*transform: translate(-50%, -50%);*/
+    counter-reset: count;
+}
+
+.timeline.dot_up .step:last-child, .timeline.dot_down .step:last-child{
+    width: fit-content;
+}
+
+
+/* ---- DEFINE LABEL POSITIONS ---- */
+
+.dot_up .dot:before {
+    top: -24px;
+    counter-increment: count;
+    /*content: 'Step ' counter(count);*/
+}
+
+.dot_up .step:first-child .dot:before,
+.dot_down .step:first-child .dot:before{
+    left: 0;
+    transform: unset;
+}
+
+.dot_up .step:last-child .dot:last-child:before,
+.dot_down .step:last-child .dot:last-child:before {
+    right: 0;
+    left: unset;
+    transform: unset;
+}
+
+.dot_down .dot:before {
+    bottom: -24px;
+    counter-increment: count;
+    /*content: 'Step ' counter(count);*/
+}
+
+.line_down .line:before {
+    bottom: -24px;
+    counter-increment: count;
+    /*content: 'Step ' counter(count);*/
+}
+
+.line_up .line:before {
+    top: -24px;
+    counter-increment: count;
+    /*content: 'Step ' counter(count);*/
+}
+
+
+
+
+/* ---- STYLE EACH TIMELINE`S STEP ---- */
+
+.step {
+    width: 100%;
+}
+
+.step:last-child .line {
+    width: calc(100% - 24px);
+}
+
+.step_completed .dot, .step_completed .line {
+    background-color: limegreen;
+}
+
+.step_pending .dot, .step_pending .line {
+    background-color: darkorange;
+}
+
+.step_inactive .dot {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: white;
+    border: 2px solid lightgray;
+}
+
+.step_inactive .line {
+    width: calc(100% - 14px);
+    background-color: lightgray;
+}
+
+.step_inactive:last-child .line {
+    width: calc(100% - 28px);
+}
+
+
+
+/* ---- STYLE STEP`S DOT & LINE ELEMS ---- */
+
+.dot {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 2px;
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    min-height: 8px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.line {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 12px);
+    height: 2px;
+}
+
+.dot:before, .line:before {
+    position: absolute;
+    left: 50%;
+    width: max-content;
+    font-size: 14px;
+    color: grey;
+    transform: translateX(-50%);
+    content: attr(data-label);
+}
+
+
+.controls {
+    margin: 0 2.5%;
+    width: 95%;
+    display: block;
+    margin-top: 64px;
+    align-self: flex-start;
+}
+
+.select label{
+    display: block;
+}
+
+.range label {
+    display: block;
+}

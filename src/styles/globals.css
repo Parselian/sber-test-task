@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    max-width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Noto Sans', sans-serif, --apple-system;
+}
+
+#__next {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
