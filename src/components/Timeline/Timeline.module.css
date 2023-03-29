@@ -1,12 +1,8 @@
 .timeline {
-    /*position: absolute;*/
-    /*top: 50%;*/
-    /*left: 50%;*/
     display: flex;
     align-items: center;
     width: 95%;
     min-width: 580px;
-    /*transform: translate(-50%, -50%);*/
     counter-reset: count;
 }
 
@@ -23,16 +19,18 @@
     /*content: 'Step ' counter(count);*/
 }
 
-.dot_up .step:first-child .dot:before,
-.dot_down .step:first-child .dot:before{
-    left: 0;
-    transform: unset;
-}
-
 .dot_up .step:last-child .dot:last-child:before,
 .dot_down .step:last-child .dot:last-child:before {
     right: 0;
     left: unset;
+    transform: unset;
+}
+
+.dot_up .step:first-child .dot:before,
+.dot_up .step:first-child:last-child .dot:before,
+.dot_down .step:first-child .dot:before,
+.dot_down .step:first-child:last-child .dot:before {
+    left: 0;
     transform: unset;
 }
 
@@ -131,11 +129,23 @@
 
 
 .controls {
-    margin: 0 2.5%;
-    width: 95%;
+    margin: 64px 2.5% 0;
+    padding: 24px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    width: fit-content;
     display: block;
-    margin-top: 64px;
     align-self: flex-start;
+    background-color: #f3f3f3;
+}
+
+.controls > div {
+    margin-bottom: 40px;
+}
+
+.controls > div:last-child {
+    margin-bottom: 0;
 }
 
 .select label{
