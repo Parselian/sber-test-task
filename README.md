@@ -1,6 +1,6 @@
-## KEEP IN MIND!
+## KEEP IN MIND
 
-This mini map works in IE browser properly only in BUILD mode. So just:
+This mini app works in IE browser properly only in BUILD mode. So just:
 
 1) npm run build
 2) npm run start

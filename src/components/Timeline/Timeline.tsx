@@ -72,7 +72,6 @@ const Timeline = ({type, position = 'up', steps}: TimelineProps): JSX.Element =>
 
                 <Range rangeId="steps-amount" label="Select steps amount:" max={steps.length} current={steps.length}
                        onUpd={(val) => updStepsAmount(val)}/>
-
             </div>
         </>
     )
