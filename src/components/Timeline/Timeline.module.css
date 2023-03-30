@@ -6,8 +6,8 @@
     counter-reset: count;
 }
 
-.timeline.dot_up .step:last-child, .timeline.dot_down .step:last-child{
-    width: fit-content;
+.timeline.dot_up .step:last-child, .timeline.dot_down .step:last-child {
+    width: auto;
 }
 
 
@@ -22,8 +22,8 @@
 .dot_up .step:last-child .dot:last-child:before,
 .dot_down .step:last-child .dot:last-child:before {
     right: 0;
-    left: unset;
-    transform: unset;
+    left: auto;
+    transform: none;
 }
 
 .dot_up .step:first-child .dot:before,
@@ -31,7 +31,7 @@
 .dot_down .step:first-child .dot:before,
 .dot_down .step:first-child:last-child .dot:before {
     left: 0;
-    transform: unset;
+    transform: none;
 }
 
 .dot_down .dot:before {
@@ -51,8 +51,6 @@
     counter-increment: count;
     /*content: 'Step ' counter(count);*/
 }
-
-
 
 
 /* ---- STYLE EACH TIMELINE`S STEP ---- */
@@ -92,7 +90,6 @@
 }
 
 
-
 /* ---- STYLE STEP`S DOT & LINE ELEMS ---- */
 
 .dot {
@@ -120,13 +117,13 @@
 .dot:before, .line:before {
     position: absolute;
     left: 50%;
-    width: max-content;
+    width: auto;
+    white-space: nowrap;
     font-size: 14px;
     color: grey;
     transform: translateX(-50%);
     content: attr(data-label);
 }
-
 
 .controls {
     margin: 64px 2.5% 0;
@@ -134,7 +131,7 @@
     -webkit-border-radius: 16px;
     -moz-border-radius: 16px;
     border-radius: 16px;
-    width: fit-content;
+    width: auto;
     display: block;
     align-self: flex-start;
     background-color: #f3f3f3;
@@ -146,12 +143,4 @@
 
 .controls > div:last-child {
     margin-bottom: 0;
-}
-
-.select label{
-    display: block;
-}
-
-.range label {
-    display: block;
 }

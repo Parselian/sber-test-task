@@ -1,9 +1,13 @@
 import Timeline from "@/components/Timeline/Timeline";
+import "react-app-polyfill/ie11";
+import "react-app-polyfill/stable";
+import "core-js/features/url-search-params";
+
 
 export default function Home() {
     return (
         <>
-            <Timeline type="dot" position='up' steps={[
+            <Timeline type="line" position='down' steps={[
                 {
                     label: 'Отправка заявки',
                     status: 'completed'
